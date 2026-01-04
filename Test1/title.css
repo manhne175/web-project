@@ -1,94 +1,111 @@
-/* Thiết lập chung: Xóa khoảng cách mặc định */
+/* 1. Thiết lập chung */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-/* 1. Style cho Header */
-header {
-    background-color: #333;
-    color: white;
-    padding: 15px 50px;
+body {
+    font-family: 'Poppins', sans-serif; /* Font chữ hiện đại */
+    /* Tạo màu nền chuyển sắc (Gradient) đẹp mắt */
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    height: 100vh;
     display: flex;
-    justify-content: space-between; /* Đẩy Logo sang trái, Menu sang phải */
+    justify-content: center;
     align-items: center;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-}
-
-header nav a:hover {
-    color: #4CAF50; /* Đổi màu khi di chuột vào */
-}
-
-/* 2. Style cho Banner (Hero) */
-.hero {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.hero button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.hero button:hover {
-    background-color: #45a049;
-}
-
-/* 3. Style cho Nội dung chính */
-.container {
-    display: flex; /* Dàn hàng ngang */
-    justify-content: center;
-    gap: 20px;
-    padding: 50px;
-    flex-wrap: wrap; /* Tự xuống dòng nếu màn hình nhỏ */
-}
-
+/* 2. Thiết kế thẻ Card (Khung chứa) */
 .card {
     background: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 300px;
+    width: 380px;
+    border-radius: 20px;
+    overflow: hidden; /* Cắt gọn nội dung thừa */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu tạo độ nổi */
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    transition: transform 0.3s ease; /* Hiệu ứng mượt khi di chuột */
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.card:hover {
+    transform: translateY(-10px); /* Nhấc nhẹ thẻ lên khi di chuột vào */
+}
+
+/* 3. Phần Header của Card (Màu cam chủ đạo) */
+.card-header {
+    background: linear-gradient(to right, #f68e1e, #ffb347); /* Màu cam EAUT */
+    height: 120px;
+    position: relative;
+    margin-bottom: 60px; /* Tạo khoảng trống cho Logo */
+}
+
+/* 4. Ảnh đại diện (Logo) */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Bo tròn ảnh */
+    border: 5px solid white; /* Viền trắng dày */
+    object-fit: cover; /* Giữ tỉ lệ ảnh */
+    position: absolute;
+    bottom: -50px; /* Đẩy logo xuống nằm giữa ranh giới */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa chính xác */
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 5. Nội dung bên trong */
+.card-body {
+    padding: 0 30px 40px;
+}
+
+.name {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.university {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+/* Các dòng thông tin */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee; /* Đường gạch nét đứt */
+    font-size: 15px;
+}
+
+.label {
+    font-weight: 600;
+    color: #555;
+}
+
+.value {
     color: #333;
 }
 
-/* 4. Style cho Footer */
-footer {
-    background-color: #333;
+/* 6. Nút bấm đẹp (Button) */
+.btn-glow {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #004e9a; /* Màu xanh EAUT */
     color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
+    text-decoration: none;
+    border-radius: 50px; /* Bo tròn nút */
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 78, 154, 0.4); /* Đổ bóng màu xanh */
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    background: #003366;
+    box-shadow: 0 8px 20px rgba(0, 78, 154, 0.6);
+    transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
 }
